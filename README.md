@@ -56,33 +56,42 @@ Agent Orchestra is a comprehensive AI-powered development platform that:
 
 ### Prerequisites
 
-- **Python 3.11+** (3.13 compatible)
-- **Node.js 18+** and **npm** for frontend
-- **Ollama** (for local models) - Optional but recommended
-- **Redis** (for caching and message bus)
-- **PostgreSQL** (for audit logs and analytics)
+- Node.js 24.5.0+
+- Python 3.13.3+
+- Docker 19.03.1+
+- Ollama (optional, for local models)
 
-### Installation
+### Option 1: Development Mode
 
 ```bash
-# Clone the repository
-git clone https://github.com/stackconsult/agent-orchestra-production-build-tmp
-cd agent-orchestra-production-build-tmp
-
-# Setup Backend
-cd q-and-a-orchestra-agent
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-
-# Setup Frontend
-cd ../frontend
+# Clone and install
+git clone https://github.com/stackconsult/ui-ug-orch-tmp
+cd ui-ug-orch-tmp
 npm install
 
-# Setup environment
-cp ../q-and-a-orchestra-agent/.env.example ../q-and-a-orchestra-agent/.env
-cp .env.local.example .env.local
-# Edit .env files with your configuration
+# Start all services
+npm run dev
+```
+
+- Frontend: <http://localhost:3000>
+- Backend: <http://localhost:8000>
+- API Docs: <http://localhost:8000/docs>
+
+### Option 2: Docker (Recommended)
+
+```bash
+# Start with Docker Compose
+npm run docker:up
+```
+
+### Environment Setup
+
+```bash
+# Backend
+cp q-and-a-orchestra-agent/.env.example q-and-a-orchestra-agent/.env
+
+# Frontend  
+cp frontend/.env.local.example frontend/.env.local
 ```
 
 ### Environment Configuration

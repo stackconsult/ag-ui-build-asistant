@@ -1,0 +1,19 @@
+{
+  "name": "agent-orchestra-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": ["frontend", "q-and-a-orchestra-agent"],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "docker:up": "docker compose -f infra/docker/docker-compose.yml up --build",
+    "docker:down": "docker compose -f infra/docker/docker-compose.yml down"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.0"
+  },
+  "packageManager": "npm@11.8.0"
+}
