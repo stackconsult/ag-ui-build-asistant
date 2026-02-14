@@ -15,7 +15,8 @@ from typing import Dict, List, Optional, Any, Tuple
 from dataclasses import dataclass, field
 from enum import Enum
 
-from sentence_transformers import SentenceTransformer
+# from sentence_transformers import SentenceTransformer
+# Temporarily disabled for Phase 3 - requires PyTorch which conflicts with Python 3.13
 from .vector_db_adapter import VectorDBAdapter
 
 
